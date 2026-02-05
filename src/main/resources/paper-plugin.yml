@@ -4,3 +4,11 @@ main: io.github.fusezion.skriptHmccosmetics.SkriptHmccosmetics
 api-version: '1.21'
 authors: [ Lyric/Fusezion ]
 description: Wanted to use a cosmetic plugin in your code? Well now you can!
+dependencies:
+  server:
+    Skript:
+      required: true
+      load: BEFORE
+    HMCCosmetics:
+      required: true
+      load: BEFORE
