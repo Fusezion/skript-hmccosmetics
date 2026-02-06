@@ -1,0 +1,19 @@
+version: 1.0.0
+
+types:
+    cosmetic: cosmetic¦s
+    cosmeticslot: cosmetic slot¦s
+    hiddenreason: hidden reason¦s
+
+hiddenreasons:
+    none: none
+    worldguard: worldguard
+    plugin: plugin
+    vanish: vanish
+    potion: potion
+    action: action
+    command: command
+    emote: emote
+    gamemode: gamemode
+    world: world
+    disabled: disabled
