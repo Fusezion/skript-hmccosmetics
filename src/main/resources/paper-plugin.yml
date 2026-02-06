@@ -1,6 +1,6 @@
 name: skript-hmccosmetics
 version: '1.0.0'
-main: io.github.fusezion.skriptHmccosmetics.SkriptHmccosmetics
+main: io.github.fusezion.skripthmccosmetics.SkriptHMCCosmetics
 api-version: '1.21'
 authors: [ Lyric/Fusezion ]
 description: Wanted to use a cosmetic plugin in your code? Well now you can!
