@@ -15,7 +15,7 @@ repositories {
 
 dependencies {
     compileOnly("io.papermc.paper:paper-api:1.21.11-R0.1-SNAPSHOT")
-    compileOnly("com.hibiscusmc:HMCCosmetics:2.8.2-fed13b8e")
+    compileOnly("com.hibiscusmc:HMCCosmetics:2.8.3")
     compileOnly("com.github.SkriptLang:Skript:2.13.2")
 }
 
