@@ -1,9 +1,10 @@
 version: 1.0.0
 
 types:
-    cosmetic: cosmetic¦s
-    cosmeticslot: cosmetic slot¦s
-    hiddenreason: hidden reason¦s
+    cosmetic: cosmetic¦s @a
+    cosmeticslot: cosmetic slot¦s @a
+    hiddenreason: hidden reason¦s @a
+    wardrobe: wardrobe¦s @a
 
 hiddenreasons:
     none: none
