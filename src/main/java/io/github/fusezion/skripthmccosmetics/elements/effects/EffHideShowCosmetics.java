@@ -16,19 +16,20 @@ public class EffHideShowCosmetics extends Effect {
 
 	static {
 		Skript.registerEffect(EffHideShowCosmetics.class,
-				"show cosmetics of %players% [caused by %-hiddenreason%]",
+				"[:force] show cosmetics of %players% [caused by %-hiddenreason%]",
 				"hide cosmetics of %players% [caused by %-hiddenreason%]");
 	}
 
 	private Expression<Player> players;
 	private Expression<HiddenReason> hiddenReason;
-	private boolean isHide;
+	private boolean isHide, useForce;
 
 	@Override
 	public boolean init(Expression<?>[] expressions, int matchedPattern, Kleenean isDelayed, ParseResult parseResult) {
 		this.players = (Expression<Player>) expressions[0];
 		this.hiddenReason = (Expression<HiddenReason>) expressions[1];
 		this.isHide = matchedPattern == 1;
+		this.useForce = parseResult.hasTag("force");
 		return true;
 	}
 
@@ -41,6 +42,10 @@ public class EffHideShowCosmetics extends Effect {
 			if (isHide) {
 				user.hideCosmetics(reason);
 			} else {
+				if (useForce) {
+					user.clearHiddenReasons();
+					user.silentlyAddHideFlag(reason);
+				}
 				user.showCosmetics(reason);
 			}
 		}
@@ -52,7 +57,7 @@ public class EffHideShowCosmetics extends Effect {
 		if (this.isHide) {
 			string = "hide cosmetics of " + this.players.toString(event, debug);
 		} else {
-			string = "show cosmetics of " + this.players.toString(event, debug);
+			string = (useForce ? "force " : "") + "show cosmetics of " + this.players.toString(event, debug);
 		}
 		return string + (this.hiddenReason == null ? "" : " caused by" + this.hiddenReason.toString(event, debug));
 	}
