@@ -42,7 +42,7 @@ public class EffColorPlayerCosmetic extends Effect {
 			CosmeticUser user = HMCCosmeticsAPI.getUser(player.getUniqueId());
 			if (user == null || !user.hasCosmeticInSlot(cosmeticSlot)) continue;
 			Cosmetic cosmetic = user.getCosmetic(cosmeticSlot);
-			if (cosmetic == null || !cosmetic.isDyeable()) continue;
+			assert cosmetic != null;
 			user.addCosmetic(cosmetic, color.asBukkitColor());
 		}
 	}
