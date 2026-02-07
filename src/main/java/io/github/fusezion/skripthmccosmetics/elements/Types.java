@@ -92,7 +92,7 @@ public class Types {
 
 					@Override
 					public String toVariableNameString(Cosmetic cosmetic) {
-						return cosmetic.toString();
+						return cosmetic.getId();
 					}
 				})
 		);
@@ -115,18 +115,19 @@ public class Types {
 					@Override
 					public @Nullable CosmeticSlot parse(String input, ParseContext context) {
 						input = input.toUpperCase(Locale.ROOT).replace(' ', '_');
+						input = input.replace("_COSMETIC", "");
 						if (!CosmeticSlot.contains(input)) return null;
 						return CosmeticSlot.valueOf(input);
 					}
 
 					@Override
 					public String toString(CosmeticSlot cosmeticSlot, int flags) {
-						return cosmeticSlot.getName().toLowerCase(Locale.ROOT).replace('_', ' ');
+						return cosmeticSlot.getName().toLowerCase(Locale.ROOT).replace('_', ' ') + " cosmetic";
 					}
 
 					@Override
 					public String toVariableNameString(CosmeticSlot cosmeticSlot) {
-						return cosmeticSlot.getName().toLowerCase(Locale.ROOT).replace('_', ' ');
+						return cosmeticSlot.getName().toLowerCase(Locale.ROOT).replace('_', ' ') + " cosmetic";
 					}
 				})
 		);
